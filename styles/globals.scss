@@ -14,9 +14,9 @@ body {
     content: "";
     width: 100%;
     height: 100vh;
-    //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
-    // background: #D3D3D3;
-    background-image: url("../public/bg.jpg");
+    // background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
+    background:#F5F5F5;
+    // background-image: url("../public/bg.jpg");
     position: fixed;
     left: 0;
     top: 0;
@@ -25,6 +25,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+// the orange header
+.headerwbg{
+  // background-image: url("../public/bg.jpg");
+  //   background-position: 50% 50%;
+  //   background-repeat: no-repeat;
+  //   background-size: fill;
+  background: #282828;
+}
+
+// the banner image under the header
+.bannerwbg{
+  min-height: 250px;
+  background-image: url(../public/banner.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .text-shadow{
@@ -61,4 +78,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  max-height: 100%;
 }
