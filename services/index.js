@@ -1,7 +1,9 @@
 import { request, gql } from 'graphql-request';
 
+// takes env from .env in main folder
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+// Queries the graphQL CMS for relevant fields
 export const getPosts = async () => {
     const query = gql`
         query Authors {
