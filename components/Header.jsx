@@ -13,6 +13,7 @@ const categories = [
 const Header = () => {
   return (
     <div className='headerwbg mb-8'>
+        {/* Navbar */}
         <div className='container px-10 mx-auto'>
             <div className='border-b w-full inline-block border-white-400'>
                 <div className='md:float-left block'>
@@ -34,6 +35,7 @@ const Header = () => {
 
             </div>
         </div>
+        {/* Banner Image */}
         <div className='container mx-0 min-w-full max-h-29 overflow-hidden bannerwbg'>
             {/* TODO: make it the gif of them walking instead */}
         </div>

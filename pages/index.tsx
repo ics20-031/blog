@@ -13,6 +13,12 @@ import { getPosts } from '../services'
 //   }
 // ]
 
+
+// The body of the blog, containing:
+//    The Head with the title of the page
+//    The Posts which are called with a map function
+//    The PostWidget
+//    The Categories
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -36,6 +42,7 @@ export default function Home({ posts }) {
   )
 }
 
+// Default function calling props from the graphQL CMS 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
 
