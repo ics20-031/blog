@@ -42,6 +42,41 @@ export const getPosts = async () => {
     return result.postsConnection.edges; 
 };
 
+// Queries the graphQL CMS for relevant fields
+export const getPostDetails = async (slug) => {
+    const query = gql`
+        query GetPostDetails($slug: String!) {
+            post(where: { slug: $slug }) {
+                author {
+                    bio
+                    name
+                    id
+                    photo {
+                        url
+                    }
+                }
+                createdAt
+                slug
+                title
+                excerpt
+                featuredImage {
+                    url
+                }
+                categories {
+                    name
+                    slug
+                }
+                content {
+                    raw
+                }
+            }              
+        }
+    `
+
+    const result = await request(graphqlAPI, query, { slug });
+    return result.post; 
+};
+
 // Queries the graphQL CMS for three most recent posts
 export const getRecentPosts = async () => {
     const query = gql`
@@ -65,7 +100,7 @@ export const getRecentPosts = async () => {
 };
 
 // Queries the graphQL CMS for three similar posts not including the current post
-export const getSimilarPosts = async () => {
+export const getSimilarPosts = async (categories, slug) => {
     const query = gql`
         query GetPostDetails($slug: String!, $categories: [String!]) {
             posts(
@@ -82,6 +117,22 @@ export const getSimilarPosts = async () => {
         }
     `
 
-    const result = await request(graphqlAPI, query);
+    const result = await request(graphqlAPI, query, { categories, slug });
     return result.posts;
 }
+
+// Queries the graphQL CMS for all categories
+export const getCategories = async () => {
+    const query = gql`
+        query GetCategories {
+            categories {
+                name
+                slug
+            }
+        }
+    `
+
+    const result = await request(graphqlAPI, query);
+    return result.categories;
+}
+

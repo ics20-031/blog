@@ -4,16 +4,6 @@ import Image from 'next/image'
 import { PostCard, Categories, PostWidget } from '../components'
 import { getPosts } from '../services'
 
-// const posts = [
-//   {
-//     title: "react testing", excerpt: "Learning React"
-//   },
-//   {
-//     title: "another post", excerpt: "here is another post!"
-//   }
-// ]
-
-
 // The body of the blog, containing:
 //    The Head with the title of the page
 //    The Posts which are called with a map function

@@ -47,10 +47,11 @@ const PostCard = ({ post }) => {
             <p className='text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8'>{post.excerpt}</p>
             {/* Continue Reading button */}
             <div className='text-center'>
-                <link href={`/post/${post.slug}`}/>
+                <Link href={`/post/${post.slug}`}>
                     <span className='transition duration-500 transform hover:-translate-y-1 inline-block bg-[#282828] text-lg font-medium rounded-md text-white px-8 py-3 cursor-pointer'>
                         Continue Reading
                     </span>
+                </Link>
             </div>
         </div>
     )
