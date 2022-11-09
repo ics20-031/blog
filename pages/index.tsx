@@ -19,6 +19,7 @@ import { getPosts } from '../services'
 //    The Posts which are called with a map function
 //    The PostWidget
 //    The Categories
+// Takes the param posts from getStaticProps()
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">

@@ -27,7 +27,7 @@ body {
   }
 }
 
-// the orange header
+// navbar
 .headerwbg{
   // background-image: url("../public/bg.jpg");
   //   background-position: 50% 50%;
@@ -36,12 +36,13 @@ body {
   background: #282828;
 }
 
-// the banner image under the header
+// banner image under the header
 .bannerwbg{
   min-height: 250px;
   background-image: url(../public/banner.jpg);
   background-position: center;
   background-size: cover;
+  // filter: brightness(60%);
 }
 
 .text-shadow{
@@ -78,8 +79,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-img {
-  max-height: 100%;
 }
