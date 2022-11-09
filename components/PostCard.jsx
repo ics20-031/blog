@@ -31,7 +31,7 @@ const PostCard = ({ post }) => {
                         className="align-middle rounded-full"
                         src={post.author.photo.url}
                     />
-                    <p className='inline align-middle text-gray-700 ml-2 text-lg'></p>
+                    <p className='inline align-middle text-gray-700 ml-2 text-lg'>{post.author.name}</p>
                 
                 {/* Timestamp for post creation */}
                 </div>
