@@ -47,6 +47,11 @@ jobs:
             echo "Unable to determine packager manager"
             exit 1
           fi
+      - name: Create env file
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_GRAPHCMS_ENDPOINT=${{ secrets.NEXT_PUBLIC_GRAPHCMS_ENDPOINT }} >> .env
+          cat .env
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -92,5 +97,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-    env:
-      NEXT_PUBLIC_GRAPHCMS_ENDPOINT: ${{ secrets.NEXT_PUBLIC_GRAPHCMS_ENDPOINT }}
