@@ -15,10 +15,11 @@ const Header = () => {
         <div className='headerwbg mb-8'>
             {/* Navbar */}
             <div className='container px-10 mx-auto'>
-                <div className='border-b w-full inline-block border-white-400'>
+                <div className='w-full inline-block'>
                     <div className='md:float-left block'>
                         <Link href={"/"}>
                             <span className='cursor-pointer font-bold text-4xl text-white'>
+                            {/* TODO: figure out a blog title */}
                                 My Blog
                             </span>
                         </Link>
