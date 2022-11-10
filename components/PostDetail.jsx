@@ -34,7 +34,7 @@ const PostDetail = ({ post }) => {
         </div>
         <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
         {post.content.raw.children.map((content, index) => {
-          console.log(content)
+          {/* console.log(content) */}
           return (
             <>
               <RichText content={content}/>
