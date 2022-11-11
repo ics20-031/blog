@@ -14,7 +14,6 @@ export default function Home({ posts }) {
   // TODO: use a hook to grab new posts 
   // FIXME: make it so that the github page auto updates with new posts without 
   // having to rerun workflow
-  // TODO: add private/public toggle to show posts or not
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
