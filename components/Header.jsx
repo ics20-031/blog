@@ -20,7 +20,7 @@ const Header = () => {
                         <Link href={"/"}>
                             <span className='cursor-pointer font-bold text-4xl text-white'>
                             {/* TODO: figure out a blog title */}
-                                My Blog
+                                Cool Blog
                             </span>
                         </Link>
                     </div>
@@ -32,6 +32,7 @@ const Header = () => {
                                 </span>
                             </Link>
                         ))}
+                        <span className='md:float-right mt-2 align-middle text-white ml-4'>Filter posts: </span>
                     </div>
 
                 </div>
