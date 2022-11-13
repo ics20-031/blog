@@ -139,3 +139,12 @@ export const getCategories = async () => {
     return result.categories;
 }
 
+// Submit a comment to the api backend
+export const submitComment = async ({ obj }) => {
+    const result = await fetch('/api/comments', {
+        method: 'POST',
+        body: JSON.stringify(obj), 
+    });
+
+    return result.json();
+}
