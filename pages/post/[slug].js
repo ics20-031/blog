@@ -1,8 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { getPosts, getPostDetails } from '../../services';
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm} from '../../components';
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components';
 
 const PostDetails = ({ post }) => {
+    const router = useRouter();
+
+    if (router.isFallback) {
+        return <Loader/>;
+    }
     // TODO: somehow make it so that the title of the page matches the title of the post
   return (
     <div className='container mx-auto px-10 mb-8'>
@@ -40,6 +46,6 @@ export async function getStaticPaths() {
     const posts = await getPosts();
     return {
         paths: posts.map(({ node: { slug }}) => ({ params: { slug }})), 
-        fallback: false,
+        fallback: true,
     }
 }

@@ -139,6 +139,39 @@ export const getCategories = async () => {
     return result.categories;
 }
 
+export const getCategoryPost = async (slug) => {
+    const query = gql`
+        query GetCategoryPost($slug: String!) {
+            postsConnection(where: {categories_some: {slug: $slug}}) {
+                edges {
+                    cursor
+                    node {
+                        author {
+                            bio
+                            name
+                            id
+                            photo {
+                                url
+                            }
+                        }
+                        createdAt
+                        slug
+                        title
+                        excerpt
+                        featuredImage {
+                            url
+                        }
+                        categories {
+                            name
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+    `;
+}
+
 // Submit a comment to the api backend
 export const submitComment = async ({ obj }) => {
     const result = await fetch('/api/comments', {
