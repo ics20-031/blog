@@ -1,8 +1,9 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import { PostCard, Categories, PostWidget } from '../components'
-import { getPosts } from '../services'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import { PostCard, Categories, PostWidget } from '../components';
+import { getPosts } from '../services';
+import React, { useState, useEffect } from 'react';
 
 // The body of the blog, containing:
 //    The Head with the title of the page
@@ -14,6 +15,7 @@ export default function Home({ posts }) {
   // TODO: use a hook to grab new posts 
   // FIXME: make it so that the github page auto updates with new posts without 
   // having to rerun workflow
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
