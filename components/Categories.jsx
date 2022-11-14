@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { getCategories } from '../services';
 
 const Categories = () => {
-  // FIXME: make category links work
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {

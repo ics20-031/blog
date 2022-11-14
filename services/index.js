@@ -165,11 +165,16 @@ export const getCategoryPost = async (slug) => {
                             name
                             slug
                         }
+                        hiddenPost
                     }
                 }
             }
         }
     `;
+
+    const result = await request(graphqlAPI, query, { slug });
+
+    return result.postsConnection.edges;
 }
 
 // Submit a comment to the api backend
