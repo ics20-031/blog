@@ -5,3 +5,5 @@
 // }
 
 // export default Test
+
+export default Test
