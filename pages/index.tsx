@@ -47,7 +47,7 @@ export default function Home({ posts }) {
             <Categories/>
           </div>
           {/* // TODO: make a custom page work */}
-          {/* <Link href={`/post/test`}>Test link</Link> */}
+          {/* <Link href={`/test`}>Test link</Link> */}
 
       </div>
       </div>
