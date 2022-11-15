@@ -1,9 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { PostCard, Categories, PostWidget } from '../components';
+import { PostCard, Categories, PostWidget, Loader } from '../components';
 import { getPosts } from '../services';
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 // The body of the blog, containing:
 //    The Head with the title of the page
@@ -13,9 +16,14 @@ import React, { useState, useEffect } from 'react';
 // Takes the param posts from getStaticProps()
 export default function Home({ posts }) {
   // TODO: use a hook to grab new posts 
+  // TODO: make posts show in reverse order
   // FIXME: make it so that the github page auto updates with new posts without 
   // having to rerun workflow
+  const router = useRouter();
 
+    if (router.isFallback) {
+        return <Loader/>;
+    }
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -38,6 +46,9 @@ export default function Home({ posts }) {
             <PostWidget categories={posts.categories} slug={posts.slug}/>
             <Categories/>
           </div>
+          {/* // TODO: make a custom page work */}
+          {/* <Link href={`/post/test`}>Test link</Link> */}
+
       </div>
       </div>
 
@@ -51,6 +62,6 @@ export async function getStaticProps() {
 
   return {
     props: { posts },
-    revalidate: 10
+    revalidate: 10,
   }
 }
