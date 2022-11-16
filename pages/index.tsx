@@ -36,6 +36,7 @@ export default function Home({ posts }) {
       <Head>
         <title>Cool Blog</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="https://media.graphassets.com/YpBdwj1QQBSwUNDSLbG6">
       </Head>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
         <div className='lg:col-span-8 col-span-1'>
