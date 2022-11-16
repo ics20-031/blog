@@ -1,5 +1,6 @@
 import React from 'react'
-// import Image from 'next/image'
+import { RichText } from '@graphcms/rich-text-react-renderer';
+
 
 const Author = ({ author }) => {
   // TODO: change author bio into richtext and display as such
@@ -15,7 +16,7 @@ const Author = ({ author }) => {
         />
       </div>
         <h3 className='my-4 text-xl font-bold'>{author.name}</h3>
-        <p className='text-lg'>{author.bio}</p>
+        <p className='text-lg'><RichText content={author.richbio.raw}/></p>
     </div>
   )
 }

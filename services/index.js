@@ -51,6 +51,9 @@ export const getPostDetails = async (slug) => {
             post(where: { slug: $slug }) {
                 author {
                     bio
+                    richbio {
+                        raw
+                    }
                     name
                     id
                     photo {
