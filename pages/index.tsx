@@ -42,7 +42,6 @@ export default function Home({ posts }) {
           {thePosts.map((post, index) => {
             if (!post.node.hiddenPost)
             {
-              console.log(post.node)
               return (
                   <PostCard post={post.node} key={post.title}/>
                 )

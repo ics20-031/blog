@@ -45,7 +45,8 @@ export async function getStaticProps({ params }) {
     await avoidRateLimit();
     const data = (await getPostDetails(params.slug)) || [];
     return {
-        props: { initPost: data }
+        props: { initPost: data },
+        revalidate: 10,
     }
 }  
 
