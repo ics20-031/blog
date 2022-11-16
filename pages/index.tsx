@@ -29,7 +29,7 @@ export default function Home({ posts }) {
     useEffect(() => {
       getPosts()
       .then((newPosts) => setThePosts(newPosts));
-    }, [])
+    }, [posts])
 
   return (
     <div className="container mx-auto px-10 mb-8">
