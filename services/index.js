@@ -11,7 +11,7 @@ export const getPosts = async () => {
                 id
                 hiddenPost
             }
-            postsConnection() {
+            postsConnection(first:500) {
                 edges {
                     node {
                         author {
