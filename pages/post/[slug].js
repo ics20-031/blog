@@ -34,18 +34,25 @@ export default PostDetails
 
 // Default function calling props from the graphQL CMS 
 export async function getStaticProps({ params }) {
-    
+    await avoidRateLimit();
+    console.log("get static props request")
     const data = (await getPostDetails(params.slug)) || [];
-
     return {
         props: { post: data }
     }
 }  
 
 export async function getStaticPaths() {
+    await avoidRateLimit();
+    console.log("get static paths request");
     const posts = await getPosts();
     return {
         paths: posts.map(({ node: { slug }}) => ({ params: { slug }})), 
         fallback: true,
     }
 }
+export function avoidRateLimit(delay = 500) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, delay)
+    })
+  }
