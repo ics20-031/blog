@@ -10,7 +10,6 @@ const CategoryPost = ({ posts }) => {
     if (router.isFallback) {
         return <Loader />;
     }
-    // test
 
     return (
         <div className="container mx-auto px-10 mb-8">

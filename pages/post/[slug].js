@@ -3,19 +3,12 @@ import { useRouter } from 'next/router';
 import { getPosts, getPostDetails } from '../../services';
 import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from '../../components';
 
-const PostDetails = ({ initPost }) => {
+const PostDetails = ({ post }) => {
     const router = useRouter();
 
     if (router.isFallback) {
         return <Loader/>;
     }
-
-    const [post, setPost] = useState(initPost);
-    
-    useEffect(() => {
-        getPostDetails(initPost.slug)
-        .then((newPosts) => setPost(newPosts));
-    }, [initPost]);
 
     // TODO: somehow make it so that the title of the page matches the title of the post
     return (
@@ -45,7 +38,7 @@ export async function getStaticProps({ params }) {
     await avoidRateLimit();
     const data = (await getPostDetails(params.slug)) || [];
     return {
-        props: { initPost: data },
+        props: { post: data },
         revalidate: 10,
     }
 }  
@@ -60,6 +53,6 @@ export async function getStaticPaths() {
 }
 export function avoidRateLimit(delay = 500) {
     return new Promise((resolve) => {
-      setTimeout(resolve, delay)
+        setTimeout(resolve, delay)
     })
-  }
+}
