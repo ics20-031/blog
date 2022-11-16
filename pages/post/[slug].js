@@ -46,6 +46,7 @@ export async function getStaticPaths() {
     await avoidRateLimit();
     console.log("get static paths request");
     const posts = await getPosts();
+    console.log(posts);
     return {
         paths: posts.map(({ node: { slug }}) => ({ params: { slug }})), 
         fallback: true,
