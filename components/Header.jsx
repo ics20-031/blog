@@ -33,6 +33,9 @@ const Header = () => {
                         ))}
                         <span className='md:float-right mt-2 align-middle text-white ml-4'>Filter posts: </span> */}
                         <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
+                            <Link href={`https://github.com/ics20-031`}>Github</Link>
+                        </span>
+                        <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
                             <Link href={`/post/about-me`}>About Me</Link>
                         </span>
                         <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
